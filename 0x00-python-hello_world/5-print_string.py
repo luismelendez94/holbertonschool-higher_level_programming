@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 str = "Holberton School"
-for i in range(0, 3):
-    print(str, end="")
+print("{}".format(str * 3), end="")
 print("\n{}".format(str[0:9]))
