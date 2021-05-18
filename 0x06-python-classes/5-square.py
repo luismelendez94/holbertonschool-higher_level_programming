@@ -31,15 +31,14 @@ class Square:
         except TypeError:
             raise TypeError("size must be an integer")
 
-
     def my_print(self):
         """Print the square"""
 
-        if self.__size == 0:
-            print()
-        else:
+        if self.__size != 0:
             for i in range(self.__size):
                 for i in range(self.__size):
                     print("#", end="")
-                print()
+                if i != self.__size:
+                    print()
+        else:
             print()
