@@ -3,12 +3,12 @@
 
 
 class Square:
-    """Size validation"""
+    """Size validation of the square"""
 
     def __init__(self, size=0):
         """Initialize variable size
-
         Verify that it is a integer"""
+
         try:
             self.__size = size
             if size < 0:
