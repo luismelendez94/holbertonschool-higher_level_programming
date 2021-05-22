@@ -1,0 +1,41 @@
+The ``2-matrix_divided`` module
+============================
+
+Using ``matrix_divided``
+---------------------
+This is an test text file in reStructuredText format. First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+	>>> matrix = [[1, 2], [3, 4]]
+	>>> matrix_divided(matrix, 2)
+	[[0.5, 1.0], [1.5, 2.0]]
+	>>> matrix = [[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+	>>> matrix_divided(matrix, 2.0)
+	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+	>>> matrix = [[2, 4.0], [6.0, 8]]
+	>>> matrix_divided(matrix, 2)
+	[[1.0, 2.0], [3.0, 4.0]]
+	>>> matrix = [[2, 4], [6, 8]]
+	>>> matrix_divided(matrix, "2")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+	>>> matrix = [[2.0, 4.0], [6.0, 8.0]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+	>>> matrix = [[2, "4"], [6, 8]]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9, 0]]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size

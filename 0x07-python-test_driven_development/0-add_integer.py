@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""
-Function that make an integer addition
+"""Function that make an integer addition
 
 Verifies if it is an integer and if float,
 converts it to integer
 """
+
+
 def add_integer(a, b=98):
     """Function that adds 2 integers"""
 
