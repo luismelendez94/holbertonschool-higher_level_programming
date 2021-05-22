@@ -11,6 +11,7 @@ Returns:
     Nothings, the function prints something
 """
 
+
 def say_my_name(first_name, last_name=""):
     """Function that prints the name pass"""
 

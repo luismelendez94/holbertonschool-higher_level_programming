@@ -1,5 +1,18 @@
 #!/usr/bin/python3
+"""
+Function that prints a square with the character '#'
+
+Arg:
+    size (int): The length of the square
+
+Return:
+    Nothing, just prints a square
+"""
+
+
 def print_square(size):
+    """Function to print a square"""
+
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
