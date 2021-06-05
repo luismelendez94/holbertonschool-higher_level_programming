@@ -5,4 +5,4 @@
 class BaseGeometry:
     """ An example of an empty class """
 
-    variable = ""
+    pass
