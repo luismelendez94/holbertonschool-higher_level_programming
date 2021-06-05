@@ -15,7 +15,7 @@ class Student:
     def to_json(self, attrs=None):
         """ Retrieves the dictionary representation """
 
-        if attrs != None:
+        if attrs is not None:
             newList = {}
             for index in attrs:
                 if index in self.__dict__:
