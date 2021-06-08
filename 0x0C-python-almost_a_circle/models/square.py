@@ -12,57 +12,44 @@ class Square(Rectangle):
 
         super().__init__(size, size, x, y, id)
 
-    def area(self):
-        """ Compute the area of a rectangle """
+    @property
+    def size(self):
+        """ Getter: Retrieve the size """
 
-        return self.__width * self.__height
+        return Rectangle.width.fget(self)
 
-    def display(self):
-        """ Print a rectangle with the specifications """
+    @size.setter
+    def size(self, value):
+        """ Setter: Set and verify the size """
 
-        for line in range(self.__y):
-            print()
-        for col in range(self.__height):
-            for space in range(self.__x):
-                print(" ", end="")
-            for row in range(self.__width):
-                print("#", end="")
-            if col < self.__height - 1:
-                print()
-        print()
+        Rectangle.width.fset(self, value)
 
     def __str__(self):
         """ Return a string representation of the rectangle """
 
-        return "[Square] " + "(" + str(self.id) + ") " + str(self.__x) + "/\
-" + str(self.__y) + " - " + str(self.__size)
+        return "[Square] " + "(" + str(self.id) + ") " + str(self.x) + "/\
+" + str(self.y) + " - " + str(self.size)
 
-"""
-def update(self, *args, **kwargs):
-        Assigns an argument to each attribute
+    def update(self, *args, **kwargs):
+        """ Assigns an argument to each attribute """
 
-        if args is None:
+        if args and args is not None:
             for key, value in enumerate(args):
                 if key == 0:
                     self.id = value
                 if key == 1:
-                    self.__width = value
+                    self.size = value
                 if key == 2:
-                    self.__height = value
+                    self.x = value
                 if key == 3:
-                    self.__x = value
-                if key == 4:
-                    self.__y = value
+                    self.y = value
         else:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
-                if key == "width":
-                    self.__width = value
-                if key == "height":
-                    self.__height = value
+                if key == "size":
+                    self.size = value
                 if key == "x":
-                    self.__x = value
+                    self.x = value
                 if key == "y":
-                    self.__y
-"""
+                    self.y = value
