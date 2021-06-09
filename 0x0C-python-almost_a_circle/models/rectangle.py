@@ -10,11 +10,11 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Initialice all variables pass """
 
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -106,39 +106,39 @@ class Rectangle(Base):
     def __str__(self):
         """ Return a string representation of the rectangle """
 
-        return "[Rectangle] " + "(" + str(self.id) + ") " + str(self.__x) + "/\
-" + str(self.__y) + " - " + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle] " + "(" + str(self.id) + ") " + str(self.x) + "/\
+" + str(self.y) + " - " + str(self.width) + "/" + str(self.height)
 
     def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute """
 
-        if args and args is not None:
+        if len(args):
             for key, value in enumerate(args):
                 if key == 0:
                     self.id = value
                 if key == 1:
-                    self.__width = value
+                    self.width = value
                 if key == 2:
-                    self.__height = value
+                    self.height = value
                 if key == 3:
-                    self.__x = value
+                    self.x = value
                 if key == 4:
-                    self.__y = value
+                    self.y = value
         else:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
                 if key == "width":
-                    self.__width = value
+                    self.width = value
                 if key == "height":
-                    self.__height = value
+                    self.height = value
                 if key == "x":
-                    self.__x = value
+                    self.x = value
                 if key == "y":
-                    self.__y
+                    self.y = value
 
     def to_dictionary(self):
         """ Returns dictionary representation of Rectangle """
 
-        return {"id": self.id, "width": self.__width, "height": self.__height,
-                "x": self.__x, "y": self.__y}
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
