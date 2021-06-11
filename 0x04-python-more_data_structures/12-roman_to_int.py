@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
     }
     retNum = 0
 
-    if roman_string is not None or isinstance(roman_string, str):
+    if roman_string is not None and isinstance(roman_string, str):
         for index in range(len(roman_string)):
             if index > 0 and romanValues[roman_string[index]] >\
                     romanValues[roman_string[index - 1]]:
