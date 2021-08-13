@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
 Task 5: All cities by state
-Write a script that takes in the name of a state as an arument and lists all 'cities'
-of that state, using the database hbtn_0e_0_usa
+Write a script that takes in the name of a state as an arument and
+lists all 'cities' of that state, using the database hbtn_0e_0_usa
 """
 
 import MySQLdb
