@@ -21,6 +21,9 @@ if __name__ == '__main__':
 
     try:
         cursor.execute(sql)
+        results = cursor.fetchall()
+        for row in results:
+            print(row)
     except:
         print("***Cant Execute***")
 
