@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     sql = "SELECT * FROM states \
-            WHERE name = '{}' ORDER BY id ASC;".format(stateparam)
+            WHERE name LIKE BINARY '{}' ORDER BY id ASC;".format(stateparam)
 
     try:
         cursor.execute(sql)
