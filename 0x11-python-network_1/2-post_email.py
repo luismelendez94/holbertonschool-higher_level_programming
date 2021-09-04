@@ -10,8 +10,9 @@ if __name__ == "__main__":
     import urllib.request
     import urllib.parse
     import sys
-    email = {'email': sys.argv[2]}
+
     url = sys.argv[1]
+    email = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(email).encode('utf8')
     req = urllib.request.Request(url, data)
 
