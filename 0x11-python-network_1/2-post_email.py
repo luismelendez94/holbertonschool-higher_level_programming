@@ -17,5 +17,5 @@ if __name__ == "__main__":
     req = urllib.request.Request(url, data)
 
     with urllib.request.urlopen(req) as response:
-        result = reponse.read().decode('utf-8')
-        print(result)
+        the_page = response.read().decode('utf-8')
+        print(the_page)
