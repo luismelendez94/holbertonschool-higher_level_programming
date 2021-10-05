@@ -17,12 +17,16 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).filter_by(name=sys.argv[4]).first()
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    session.commit()
+
+    # Query
+    query = session.query(State).\
+        order_by(State.id.desc()).first()
+
     # Print query
-    if query is None:
-        print("Not found")
-    else:
-        print(str(query.id))
+    print("{}".format(query.id))
 
     # Close session
     session.close()
